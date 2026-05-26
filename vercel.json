@@ -1,6 +1,13 @@
 {
   "cleanUrls": true,
   "trailingSlash": false,
+  "redirects": [
+    {
+      "source": "/ig",
+      "destination": "/links",
+      "permanent": false
+    }
+  ],
   "headers": [
     {
       "source": "/(.*)",
