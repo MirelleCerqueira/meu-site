@@ -493,6 +493,74 @@
         .fi.vis { opacity: 1; transform: translateY(0); }
 
         /* ── RESPONSIVE ── */
+        /* ── GESTÃO DE PESSOAS ── */
+        .gp-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+            gap: 18px;
+            margin-top: 48px;
+        }
+        .gp-item {
+            display: flex; align-items: flex-start; gap: 14px;
+            background: var(--white);
+            border-radius: var(--radius);
+            padding: 20px 22px;
+            transition: all var(--t);
+            border: 1px solid transparent;
+        }
+        .gp-item:hover { border-color: var(--primary); box-shadow: var(--shadow); }
+        .gp-icon {
+            width: 44px; height: 44px;
+            background: var(--primary-light); border-radius: 10px;
+            display: flex; align-items: center; justify-content: center;
+            font-size: 1.2rem; flex-shrink: 0;
+        }
+        .gp-text h4 { font-size: 0.92rem; font-weight: 700; color: var(--dark); margin-bottom: 3px; }
+        .gp-text p  { font-size: 0.8rem; color: var(--gray); line-height: 1.5; }
+
+        /* ── TREINAMENTOS ── */
+        .training-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 28px;
+            margin-top: 48px;
+        }
+        .training-card {
+            background: var(--white);
+            border-radius: 16px;
+            padding: 32px 28px;
+            box-shadow: var(--shadow);
+            border-top: 4px solid var(--primary);
+            transition: all var(--t);
+        }
+        .training-card:hover { transform: translateY(-4px); box-shadow: var(--shadow-lg); }
+        .training-icon { font-size: 2rem; margin-bottom: 14px; }
+        .training-title { font-size: 1.1rem; font-weight: 800; color: var(--dark); margin-bottom: 10px; }
+        .training-desc { font-size: 0.875rem; color: var(--gray); line-height: 1.72; }
+
+        .spotlight-title {
+            font-size: 1rem; font-weight: 700; color: var(--dark);
+            margin-top: 52px; margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid var(--primary-light);
+        }
+        .spotlight-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(230px, 1fr));
+            gap: 14px;
+        }
+        .spotlight-item {
+            display: flex; align-items: flex-start; gap: 12px;
+            background: var(--primary-light);
+            border-radius: 12px;
+            padding: 16px 18px;
+            border-left: 3px solid var(--primary-dark);
+            transition: all var(--t);
+        }
+        .spotlight-item:hover { box-shadow: var(--shadow); }
+        .spotlight-icon { font-size: 1.1rem; flex-shrink: 0; margin-top: 1px; }
+        .spotlight-text { font-size: 0.875rem; font-weight: 600; color: var(--dark); line-height: 1.4; }
+
         @media (max-width: 900px) {
             .about-grid { grid-template-columns: 1fr; gap: 40px; }
             .footer-grid { grid-template-columns: 1fr 1fr; }
@@ -555,10 +623,11 @@
                 </div>
             </a>
             <ul class="nav-links" id="navLinks">
-                <li><a href="#servicos">Serviços</a></li>
+                <li><a href="#servicos">SST</a></li>
+                <li><a href="#gestao">Gestão de Pessoas</a></li>
+                <li><a href="#treinamentos">Treinamentos</a></li>
                 <li><a href="#sobre">Quem Somos</a></li>
                 <li><a href="#planos">Planos</a></li>
-                <li><a href="#legislacao">Base Legal</a></li>
                 <li><a href="#contato" class="nav-cta">Fale Conosco</a></li>
             </ul>
             <button class="hamburger" id="hamburger" aria-label="Abrir menu" onclick="toggleNav()">
@@ -592,7 +661,7 @@
             <div class="hero-ctas">
                 <a href="https://wa.me/5579998771326?text=Ol%C3%A1!%20Quero%20saber%20mais%20sobre%20a%20consultoria%20da%20Integralmente."
                    class="btn btn-accent" target="_blank" rel="noopener">
-                    📲 Solicitar Diagnóstico Gratuito
+                    📲 Solicitar Diagnóstico
                 </a>
                 <a href="#servicos" class="btn btn-outline-white">Conhecer os Serviços</a>
             </div>
@@ -728,42 +797,127 @@
 </section>
 
 <!-- ═══════════════════════════════════
-     SERVIÇOS COMPLEMENTARES
+     GESTÃO DE PESSOAS
 ═══════════════════════════════════ -->
-<section class="section section-alt">
+<section class="section section-alt" id="gestao">
     <div class="container">
         <div class="text-center">
-            <div class="section-label">Serviços Complementares</div>
-            <h2 class="section-title">Suporte completo para sua equipe</h2>
+            <div class="section-label">Gestão de Pessoas</div>
+            <h2 class="section-title">Pessoas no centro da estratégia</h2>
             <p class="section-subtitle">
-                Além dos três pilares principais, oferecemos soluções para fortalecer
-                a cultura de saúde e segurança da sua organização.
+                Soluções integradas para desenvolver talentos, fortalecer lideranças
+                e construir ambientes de trabalho mais saudáveis e produtivos.
             </p>
         </div>
-        <div class="comp-grid">
-            <div class="comp-item fi">
-                <div class="comp-icon">👂</div>
-                <span class="comp-text">Canal de Escuta Seguro e Confidencial</span>
+        <div class="gp-grid">
+            <div class="gp-item fi">
+                <div class="gp-icon">🚀</div>
+                <div class="gp-text">
+                    <h4>Desenvolvimento de Líderes e Equipes</h4>
+                    <p>Programas sob medida para elevar performance e engajamento</p>
+                </div>
             </div>
-            <div class="comp-item fi">
-                <div class="comp-icon">👔</div>
-                <span class="comp-text">Treinamento de Lideranças em Saúde Mental e Gestão</span>
+            <div class="gp-item fi">
+                <div class="gp-icon">📊</div>
+                <div class="gp-text">
+                    <h4>Pesquisa de Clima Organizacional</h4>
+                    <p>Diagnóstico do ambiente interno com dados para tomada de decisão</p>
+                </div>
             </div>
-            <div class="comp-item fi">
-                <div class="comp-icon">🎤</div>
-                <span class="comp-text">Palestras Temáticas e Rodas de Conversa</span>
+            <div class="gp-item fi">
+                <div class="gp-icon">🎤</div>
+                <div class="gp-text">
+                    <h4>Palestras e Workshops</h4>
+                    <p>Conteúdo técnico e comportamental com linguagem acessível e prática</p>
+                </div>
             </div>
-            <div class="comp-item fi">
-                <div class="comp-icon">🧠</div>
-                <span class="comp-text">Atendimento Psicológico Organizacional</span>
+            <div class="gp-item fi">
+                <div class="gp-icon">🚨</div>
+                <div class="gp-text">
+                    <h4>Gestão de Crises e Atendimento Psicológico de Emergência</h4>
+                    <p>Suporte especializado em situações críticas no ambiente de trabalho</p>
+                </div>
             </div>
-            <div class="comp-item fi">
-                <div class="comp-icon">🤝</div>
-                <span class="comp-text">Programa de Apoio ao Empregado (EAP)</span>
+            <div class="gp-item fi">
+                <div class="gp-icon">🔍</div>
+                <div class="gp-text">
+                    <h4>Seleção e Recrutamento de Pessoas</h4>
+                    <p>Processos seletivos alinhados à cultura e às necessidades da organização</p>
+                </div>
             </div>
-            <div class="comp-item fi">
-                <div class="comp-icon">⚖️</div>
-                <span class="comp-text">Política de Prevenção ao Assédio — Lei 14.457/2022</span>
+            <div class="gp-item fi">
+                <div class="gp-icon">🤝</div>
+                <div class="gp-text">
+                    <h4>Entrevista de Desligamento</h4>
+                    <p>Escuta estruturada para identificar causas de turnover e gerar melhorias</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ═══════════════════════════════════
+     TREINAMENTOS
+═══════════════════════════════════ -->
+<section class="section" id="treinamentos">
+    <div class="container">
+        <div class="text-center">
+            <div class="section-label">Treinamentos</div>
+            <h2 class="section-title">Capacitação que transforma</h2>
+            <p class="section-subtitle">
+                Programas desenvolvidos para ampliar competências comportamentais,
+                técnicas e relacionais — da equipe operacional à liderança executiva.
+            </p>
+        </div>
+
+        <div class="training-grid">
+            <div class="training-card fi">
+                <div class="training-icon">🧩</div>
+                <div class="training-title">Treinamentos Comportamentais</div>
+                <p class="training-desc">
+                    Desenvolvemos líderes e equipes para atuarem com mais comunicação,
+                    inteligência emocional, relacionamento interpessoal, gestão de conflitos,
+                    colaboração e comportamento organizacional moderno — competências essenciais
+                    para equipes de alta performance.
+                </p>
+            </div>
+            <div class="training-card fi">
+                <div class="training-icon">📋</div>
+                <div class="training-title">Treinamentos Técnicos</div>
+                <p class="training-desc">
+                    Programas especializados para ampliar a capacidade técnica
+                    e adequação às exigências normativas — incluindo NR-01, legislação
+                    trabalhista vigente e boas práticas de SST.
+                </p>
+            </div>
+            <div class="training-card fi">
+                <div class="training-icon">🏆</div>
+                <div class="training-title">Teambuilding e Desenvolvimento de Equipes</div>
+                <p class="training-desc">
+                    Experiências que integram colaboração, criatividade, resolução de problemas
+                    e fortalecimento da cultura. Dinâmicas vivenciais para desenvolver confiança,
+                    comunicação estratégica e alinhamento entre áreas.
+                </p>
+            </div>
+        </div>
+
+        <p class="spotlight-title">Programas em destaque</p>
+        <div class="spotlight-grid">
+            <div class="spotlight-item fi">
+                <span class="spotlight-icon">👑</span>
+                <span class="spotlight-text">Liderança — transforme líderes em agentes de saúde mental e bem-estar</span>
+            </div>
+            <div class="spotlight-item fi">
+                <span class="spotlight-icon">💡</span>
+                <span class="spotlight-text">Inteligência Emocional no ambiente de trabalho</span>
+            </div>
+            <div class="spotlight-item fi">
+                <span class="spotlight-icon">📋</span>
+                <span class="spotlight-text">Treinamento NR-01 — adequação e implementação prática</span>
+            </div>
+            <div class="spotlight-item fi">
+                <span class="spotlight-icon">🎓</span>
+                <span class="spotlight-text">Mentoria para profissionais implementadores de NR-01</span>
             </div>
         </div>
     </div>
@@ -952,9 +1106,9 @@
         <div class="cta-inner">
             <h2>Pronto para proteger sua empresa e seus colaboradores?</h2>
             <p>
-                Entre em contato e receba um diagnóstico inicial gratuito.
+                Entre em contato e conheça nossos serviços.
                 Nossas consultoras analisarão o perfil da sua empresa e
-                apresentarão a solução mais adequada.
+                apresentarão a solução mais adequada para a sua realidade.
             </p>
             <div class="cta-btns">
                 <a href="https://wa.me/5579998771326?text=Ol%C3%A1!%20Quero%20saber%20mais%20sobre%20a%20consultoria%20da%20Integralmente."
@@ -979,7 +1133,7 @@
                 <div class="logo">
                     <div class="logo-wordmark">
                         <span class="logo-name">
-                            <span class="integra">Integra</span><span class="mente" style="color:var(--primary)">mente</span>
+                            <span class="integra">Integra</span><span class="mente" style="color:var(--primary)">lmente</span>
                         </span>
                         <span class="logo-tagline">saúde e segurança no trabalho</span>
                     </div>
@@ -997,10 +1151,10 @@
                 <h4>Serviços</h4>
                 <ul class="footer-links">
                     <li><a href="#servicos">DRPS — Diagnóstico</a></li>
-                    <li><a href="#servicos">Plano de Ação</a></li>
-                    <li><a href="#servicos">Monitoramento KPIs</a></li>
-                    <li><a href="#servicos">Treinamentos</a></li>
-                    <li><a href="#servicos">Canal de Escuta</a></li>
+                    <li><a href="#servicos">Plano de Ação e Monitoramento</a></li>
+                    <li><a href="#gestao">Gestão de Pessoas</a></li>
+                    <li><a href="#treinamentos">Treinamentos</a></li>
+                    <li><a href="#treinamentos">Mentoria NR-01</a></li>
                 </ul>
             </div>
             <div class="footer-col">
